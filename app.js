@@ -8,7 +8,7 @@ const methodOverrride = require("method-override")
 const app = express();
 require("./config/database")
 app.use(express.urlencoded({extended: true}))
-app.use(methodOverrride('_method'))
+app.use(methodOverrride('_method', { methods: ['POST', 'GET']}))
 
 app.set("views", path.join(__dirname, 'src/views'))
 app.set("view engine", "ejs")
