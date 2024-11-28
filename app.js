@@ -20,6 +20,7 @@ app.use(express(path.join(__dirname, 'public')))
 app.use("/", rootRouter)
 app.use("/checklists", checklistRouter);
 app.use("/checklists", taskRouter.checklistDependent);
+app.use('/task', taskRouter.simple)
 
 app.listen(3000, () => {
     console.log("Servidor iniciado");
